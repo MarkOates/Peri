@@ -31,6 +31,8 @@ float BoardRenderer::get_cell_size()
 void BoardRenderer::render()
 {
    allegro_flare::placement2d place;
+   std::vector<Peri::Jelly*> &grid = board->get_grid_ref();
+
    place.start_transform();
 
    int num_rows = board->get_height();
@@ -49,6 +51,14 @@ void BoardRenderer::render()
             cell_outline_color,
             cell_outline_thickness
          );
+      }
+
+   for (unsigned y=0; y<num_rows; y++)
+      for (unsigned x=0; x<num_columns; x++)
+      {
+         //Board::Piece *piece = grid[
+         //al_draw_circle(
+         //);
       }
 
    place.restore_transform();

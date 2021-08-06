@@ -1,6 +1,7 @@
 #pragma once
 
 
+#include <Peri/Jelly.hpp>
 #include <string>
 
 
@@ -11,8 +12,8 @@ namespace Peri
    private:
       float x;
       float y;
-      int color_1;
-      int color_2;
+      Peri::Jelly jelly_1;
+      Peri::Jelly jelly_2;
 
    public:
       Piece();
@@ -20,12 +21,12 @@ namespace Peri
 
       void set_x(float x);
       void set_y(float y);
-      void set_color_1(int color_1);
-      void set_color_2(int color_2);
+      void set_jelly_1(Peri::Jelly jelly_1);
+      void set_jelly_2(Peri::Jelly jelly_2);
       float get_x();
       float get_y();
-      int get_color_1();
-      int get_color_2();
+      Peri::Jelly get_jelly_1();
+      Peri::Jelly get_jelly_2();
       std::string run();
    };
 }

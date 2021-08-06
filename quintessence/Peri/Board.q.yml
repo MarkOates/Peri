@@ -10,13 +10,59 @@ properties:
     init_with: 12
     getter: true
   - name: grid
-    type: std::vector<Peri::Piece*>
+    type: std::vector<Peri::Jelly*>
     init_with: 'get_width() * get_height(), nullptr'
     getter: true
+    getter_ref: true
+
+
+functions:
+
+
+  - name: place_jelly
+    type: bool
+    parameters:
+      - name: x
+        type: int
+        default_argument: 0
+      - name: y
+        type: int
+        default_argument: 0
+      - name: jelly
+        type: Peri::Jelly*
+        default_argument: '{}'
+    body: |
+      if (x < 0) return false;
+      if (y < 0) return false;
+      if (x >= width) return false;
+      if (y >= height) return false;
+
+      grid[y * width + x] = jelly;
+
+      return true;
+
+
+  - name: get_jelly_at
+    type: Peri::Jelly*
+    parameters:
+      - name: x
+        type: int
+        default_argument: 0
+      - name: y
+        type: int
+        default_argument: 0
+    body: |
+      if (x < 0) return nullptr;
+      if (y < 0) return nullptr;
+      if (x >= width) return nullptr;
+      if (y >= height) return nullptr;
+      return grid[y * width + x];
 
 
 dependencies:
 
-  - symbol: std::vector<Peri::Piece*>
+  - symbol: std::vector<Peri::Jelly*>
     headers: [ vector, Peri/Piece.hpp ]
+  - symbol: Peri::Jelly*
+    headers: [ Peri/Jelly.hpp ]
 

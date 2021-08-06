@@ -80,14 +80,23 @@ table td
 </tr>
 <tr>
   <td class="property">grid</td>
-  <td class="property">std::vector&lt;Peri::Piece*&gt;</td>
+  <td class="property">std::vector&lt;Peri::Jelly*&gt;</td>
 </tr>
     </table>
      <table>
+<tr>
+  <td class="method">place_jelly(3)</td>
+</tr>
+<tr>
+  <td class="method">get_jelly_at(2)</td>
+</tr>
     </table>
      <table>
 <tr>
-  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;std::vector&lt;Peri::Piece*&gt;&quot;, &quot;headers&quot;=&gt;[&quot;vector&quot;, &quot;Peri/Piece.hpp&quot;]}</td>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;std::vector&lt;Peri::Jelly*&gt;&quot;, &quot;headers&quot;=&gt;[&quot;vector&quot;, &quot;Peri/Piece.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Jelly*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Jelly.hpp&quot;]}</td>
 </tr>
     </table>
   </div>
@@ -196,12 +205,12 @@ table td
   <td class="property">float</td>
 </tr>
 <tr>
-  <td class="property">color_1</td>
-  <td class="property">int</td>
+  <td class="property">jelly_1</td>
+  <td class="property">Peri::Jelly</td>
 </tr>
 <tr>
-  <td class="property">color_2</td>
-  <td class="property">int</td>
+  <td class="property">jelly_2</td>
+  <td class="property">Peri::Jelly</td>
 </tr>
     </table>
      <table>
@@ -210,6 +219,9 @@ table td
 </tr>
     </table>
      <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Jelly&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Jelly.hpp&quot;]}</td>
+</tr>
     </table>
   </div>
 </ul>

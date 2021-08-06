@@ -10,18 +10,25 @@ properties:
     init_with: 0.0
     getter: true
     setter: true
-  - name: color_1
-    type: int
-    init_with: 0
+  - name: jelly_1
+    type: Peri::Jelly
+    init_with: '{}'
     getter: true
     setter: true
-  - name: color_2
-    type: int
-    init_with: 0
+  - name: jelly_2
+    type: Peri::Jelly
+    init_with: '{}'
     getter: true
     setter: true
 
 functions:
+
   - name: run
     type: std::string
     body: return "Hello World!";
+
+dependencies:
+
+  - symbol: Peri::Jelly
+    headers: [ Peri/Jelly.hpp ]
+
