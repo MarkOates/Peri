@@ -18,7 +18,7 @@ BoardRenderer::BoardRenderer(Peri::Board* board)
    , background_color(ALLEGRO_COLOR{0.2f, 0.2f, 0.2f, 0.2f})
    , x(0)
    , y(0)
-   , cell_size(50.0f)
+   , cell_size(100.0f)
 {
 }
 

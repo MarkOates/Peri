@@ -24,10 +24,10 @@ TEST_F(Peri_BoardRendererTestWithEmptyFixture, can_be_created_without_blowing_up
    Peri::BoardRenderer board_renderer;
 }
 
-TEST_F(Peri_BoardRendererTestWithEmptyFixture, cell_size__defaults_to_50)
+TEST_F(Peri_BoardRendererTestWithEmptyFixture, cell_size__defaults_to_100)
 {
    Peri::BoardRenderer board_renderer;
-   EXPECT_EQ(50.0f, board_renderer.get_cell_size());
+   EXPECT_EQ(100.0f, board_renderer.get_cell_size());
 }
 
 TEST_F(Peri_BoardRendererTestWithEmptyFixture, render__without_a_board__raises_an_exception)

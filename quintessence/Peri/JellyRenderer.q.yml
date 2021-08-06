@@ -23,7 +23,7 @@ functions:
       allegro_flare::placement2d place(x, y, 0, 0);
 
       place.start_transform();
-      al_draw_filled_circle(0, 0, 20.0, calc_jelly_color());
+      al_draw_filled_circle(0, 0, 40.0, calc_jelly_color());
       place.restore_transform();
 
       return;

@@ -23,7 +23,7 @@ TEST(Peri_BoardTest, height__initializes_with_a_value_of_12)
 TEST(Peri_BoardTest, grid__has_a_size_of_width_times_height)
 {
    Peri::Board board;
-   std::vector<Peri::Piece*> grid = board.get_grid();
+   std::vector<Peri::Jelly*> grid = board.get_grid();
    int grid_length = grid.size();
    EXPECT_EQ(72, grid_length);
 }
@@ -31,7 +31,7 @@ TEST(Peri_BoardTest, grid__has_a_size_of_width_times_height)
 TEST(Peri_BoardTest, grid__initializes_all_elements_as_nullptr)
 {
    Peri::Board board;
-   std::vector<Peri::Piece*> grid = board.get_grid();
+   std::vector<Peri::Jelly*> grid = board.get_grid();
    unsigned grid_length = grid.size();
    for (unsigned i=0; i<grid_length; i++)
    {

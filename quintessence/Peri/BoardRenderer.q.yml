@@ -20,7 +20,7 @@ properties:
     setter: true
   - name: cell_size
     type: float
-    init_with: 50.0f
+    init_with: 100.0f
     getter: true
 
 
