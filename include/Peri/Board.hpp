@@ -1,7 +1,8 @@
 #pragma once
 
 
-#include <string>
+#include <Peri/Piece.hpp>
+#include <vector>
 
 
 namespace Peri
@@ -9,12 +10,17 @@ namespace Peri
    class Board
    {
    private:
+      int width;
+      int height;
+      std::vector<Peri::Piece*> grid;
 
    public:
       Board();
       ~Board();
 
-      std::string run();
+      int get_width();
+      int get_height();
+      std::vector<Peri::Piece*> get_grid();
    };
 }
 

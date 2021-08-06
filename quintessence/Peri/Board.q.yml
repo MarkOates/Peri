@@ -1,4 +1,22 @@
-functions:
-  - name: run
-    type: std::string
-    body: return "Hello World!";
+properties:
+
+
+  - name: width
+    type: int
+    init_with: 6
+    getter: true
+  - name: height
+    type: int
+    init_with: 12
+    getter: true
+  - name: grid
+    type: std::vector<Peri::Piece*>
+    init_with: 'get_width() * get_height(), nullptr'
+    getter: true
+
+
+dependencies:
+
+  - symbol: std::vector<Peri::Piece*>
+    headers: [ vector, Peri/Piece.hpp ]
+
