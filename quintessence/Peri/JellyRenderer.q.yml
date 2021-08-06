@@ -9,6 +9,10 @@ properties:
     type: float
     init_with: 0.0f
     constructor_arg: true
+  - name: cell_size
+    type: float
+    init_with: 100.0f
+    constructor_arg: true
   - name: jelly
     type: Peri::Jelly*
     init_with: nullptr
@@ -23,7 +27,7 @@ functions:
       allegro_flare::placement2d place(x, y, 0, 0);
 
       place.start_transform();
-      al_draw_filled_circle(0, 0, 40.0, calc_jelly_color());
+      al_draw_filled_circle(0, 0, cell_size * 0.4, calc_jelly_color());
       place.restore_transform();
 
       return;

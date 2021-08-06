@@ -3,12 +3,16 @@ parent_classes:
 
   - class: AllegroFlare::Screen
     scope: public
-    init_with: "{}"
+    init_with: "{display}"
 
 
 properties:
 
 
+  - name: display
+    type: AllegroFlare::Display*
+    init_with: nullptr
+    constructor_arg: true
   - name: framework
     type: AllegroFlare::Framework*
     init_with: nullptr
@@ -27,12 +31,17 @@ functions:
   - name: primary_timer_func
     virtual: true
     override: true
+    guards: [ display ]
     body: |
       Peri::BoardRenderer board_renderer(&board);
+      board_renderer.set_position(1920/2, 1080/2);
+      board_renderer.set_cell_size(50.0f);
       board_renderer.render();
       return;
     body_dependency_symbols:
       - Peri::BoardRenderer
+      - al_get_display_width
+      - al_get_display_height
 
 
   - name: key_down_func
@@ -73,6 +82,8 @@ dependencies:
 
   - symbol: AllegroFlare::Screen
     headers: [ AllegroFlare/Screen.hpp ]
+  - symbol: AllegroFlare::Display*
+    headers: [ AllegroFlare/Display.hpp ]
   - symbol: AllegroFlare::Framework*
     headers: [ AllegroFlare/Framework.hpp ]
   - symbol: ALLEGRO_EVENT*
@@ -85,4 +96,8 @@ dependencies:
     headers: [ Peri/PieceRenderer.hpp ]
   - symbol: Peri::Piece*
     headers: [ Peri/Piece.hpp ]
+  - symbol: al_get_display_width
+    headers: [ allegro5/allegro.h ]
+  - symbol: al_get_display_height
+    headers: [ allegro5/allegro.h ]
 

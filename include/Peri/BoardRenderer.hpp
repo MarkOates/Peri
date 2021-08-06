@@ -22,6 +22,7 @@ namespace Peri
 
       void set_x(float x);
       void set_y(float y);
+      void set_cell_size(float cell_size);
       float get_x();
       float get_y();
       float get_cell_size();

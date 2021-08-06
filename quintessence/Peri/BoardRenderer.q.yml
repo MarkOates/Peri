@@ -21,6 +21,7 @@ properties:
   - name: cell_size
     type: float
     init_with: 100.0f
+    setter: true
     getter: true
 
 
@@ -61,7 +62,11 @@ functions:
             Peri::Jelly *jelly = board->get_jelly_at(x, y);
             if (jelly != nullptr)
             {
-               Peri::JellyRenderer jelly_renderer(x * cell_size + cell_h_size, y * cell_size + cell_h_size, jelly);
+               Peri::JellyRenderer jelly_renderer(
+                  x * cell_size + cell_h_size,
+                  y * cell_size + cell_h_size,
+                  cell_size,
+                  jelly);
                jelly_renderer.render();
             }
          }

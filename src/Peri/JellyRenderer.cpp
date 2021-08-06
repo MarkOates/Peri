@@ -13,9 +13,10 @@ namespace Peri
 {
 
 
-JellyRenderer::JellyRenderer(float x, float y, Peri::Jelly* jelly)
+JellyRenderer::JellyRenderer(float x, float y, float cell_size, Peri::Jelly* jelly)
    : x(x)
    , y(y)
+   , cell_size(cell_size)
    , jelly(jelly)
 {
 }
@@ -31,7 +32,7 @@ void JellyRenderer::render()
    allegro_flare::placement2d place(x, y, 0, 0);
 
    place.start_transform();
-   al_draw_filled_circle(0, 0, 40.0, calc_jelly_color());
+   al_draw_filled_circle(0, 0, cell_size * 0.4, calc_jelly_color());
    place.restore_transform();
 
    return;

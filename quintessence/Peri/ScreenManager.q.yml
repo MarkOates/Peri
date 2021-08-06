@@ -5,6 +5,10 @@ parent_classes:
 
 
 properties:
+  - name: display
+    type: AllegroFlare::Display*
+    init_with: nullptr
+    constructor_arg: true
   - name: framework
     type: AllegroFlare::Framework*
     init_with: nullptr
@@ -69,7 +73,7 @@ functions:
          current_active_screen = nullptr;
       }
 
-      current_active_screen = new Peri::GameplayScreen;
+      current_active_screen = new Peri::GameplayScreen(display);
 
       screens->add(current_active_screen);
 

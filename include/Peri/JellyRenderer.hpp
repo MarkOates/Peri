@@ -12,10 +12,11 @@ namespace Peri
    private:
       float x;
       float y;
+      float cell_size;
       Peri::Jelly* jelly;
 
    public:
-      JellyRenderer(float x=0.0f, float y=0.0f, Peri::Jelly* jelly=nullptr);
+      JellyRenderer(float x=0.0f, float y=0.0f, float cell_size=100.0f, Peri::Jelly* jelly=nullptr);
       ~JellyRenderer();
 
       void render();

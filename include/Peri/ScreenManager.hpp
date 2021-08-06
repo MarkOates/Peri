@@ -1,6 +1,7 @@
 #pragma once
 
 
+#include <AllegroFlare/Display.hpp>
 #include <AllegroFlare/Framework.hpp>
 #include <AllegroFlare/Screen.hpp>
 #include <AllegroFlare/Screens.hpp>
@@ -15,6 +16,7 @@ namespace Peri
    class ScreenManager : public AllegroFlare::Screen
    {
    private:
+      AllegroFlare::Display* display;
       AllegroFlare::Framework* framework;
       AllegroFlare::Screens* screens;
       std::map<std::string, Peri::AudioRepositoryElement> music_track_elements;
@@ -22,7 +24,7 @@ namespace Peri
       AllegroFlare::Screen* current_active_screen;
 
    public:
-      ScreenManager(AllegroFlare::Framework* framework=nullptr, AllegroFlare::Screens* screens=nullptr, std::map<std::string, Peri::AudioRepositoryElement> music_track_elements={}, std::map<std::string, Peri::AudioRepositoryElement> sound_effect_elements={});
+      ScreenManager(AllegroFlare::Display* display=nullptr, AllegroFlare::Framework* framework=nullptr, AllegroFlare::Screens* screens=nullptr, std::map<std::string, Peri::AudioRepositoryElement> music_track_elements={}, std::map<std::string, Peri::AudioRepositoryElement> sound_effect_elements={});
       ~ScreenManager();
 
       void initialize();

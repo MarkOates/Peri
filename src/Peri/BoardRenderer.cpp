@@ -40,6 +40,12 @@ void BoardRenderer::set_y(float y)
 }
 
 
+void BoardRenderer::set_cell_size(float cell_size)
+{
+   this->cell_size = cell_size;
+}
+
+
 float BoardRenderer::get_x()
 {
    return x;
@@ -97,7 +103,11 @@ void BoardRenderer::render()
          Peri::Jelly *jelly = board->get_jelly_at(x, y);
          if (jelly != nullptr)
          {
-            Peri::JellyRenderer jelly_renderer(x * cell_size + cell_h_size, y * cell_size + cell_h_size, jelly);
+            Peri::JellyRenderer jelly_renderer(
+               x * cell_size + cell_h_size,
+               y * cell_size + cell_h_size,
+               cell_size,
+               jelly);
             jelly_renderer.render();
          }
       }
