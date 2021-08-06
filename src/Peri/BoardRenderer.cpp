@@ -42,13 +42,13 @@ void BoardRenderer::render()
       }
    allegro_flare::placement2d place;
    std::vector<Peri::Jelly*> &grid = board->get_grid_ref();
-
-   place.start_transform();
-
    int num_rows = board->get_height();
    int num_columns = board->get_width();
    ALLEGRO_COLOR cell_outline_color = al_color_name("pink");
    float cell_outline_thickness = 3;
+   float cell_h_size = cell_size * 0.5f;
+
+   place.start_transform();
 
    for (unsigned y=0; y<num_rows; y++)
       for (unsigned x=0; x<num_columns; x++)
@@ -69,7 +69,7 @@ void BoardRenderer::render()
          Peri::Jelly *jelly = board->get_jelly_at(x, y);
          if (jelly != nullptr)
          {
-            Peri::JellyRenderer jelly_renderer(x * cell_size, y * cell_size, jelly);
+            Peri::JellyRenderer jelly_renderer(x * cell_size + cell_h_size, y * cell_size + cell_h_size, jelly);
             jelly_renderer.render();
          }
       }

@@ -49,7 +49,7 @@ TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__with_jellies__
 {
    Peri::Board board;
    Peri::Jelly jelly;
-   board.place_jelly(2, 2, &jelly);
+   board.place_jelly(2, 3, &jelly);
 
    Peri::BoardRenderer board_renderer(&board);
    board_renderer.render();
