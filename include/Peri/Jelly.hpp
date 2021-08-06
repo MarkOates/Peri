@@ -1,7 +1,6 @@
 #pragma once
 
 
-#include <string>
 
 
 namespace Peri
@@ -9,12 +8,13 @@ namespace Peri
    class Jelly
    {
    private:
+      int type;
 
    public:
-      Jelly();
+      Jelly(int type=0);
       ~Jelly();
 
-      std::string run();
+      int get_type();
    };
 }
 

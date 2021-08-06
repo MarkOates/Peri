@@ -8,7 +8,8 @@ namespace Peri
 {
 
 
-Jelly::Jelly()
+Jelly::Jelly(int type)
+   : type(type)
 {
 }
 
@@ -18,10 +19,12 @@ Jelly::~Jelly()
 }
 
 
-std::string Jelly::run()
+int Jelly::get_type()
 {
-   return "Hello World!";
+   return type;
 }
+
+
 } // namespace Peri
 
 

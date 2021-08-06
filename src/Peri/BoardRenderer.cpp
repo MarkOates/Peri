@@ -3,6 +3,8 @@
 #include <Peri/BoardRenderer.hpp>
 #include <allegro5/allegro_primitives.h>
 #include <allegro_flare/placement2d.h>
+#include <Peri/Jelly.hpp>
+#include <Peri/JellyRenderer.hpp>
 
 
 namespace Peri
@@ -56,9 +58,8 @@ void BoardRenderer::render()
    for (unsigned y=0; y<num_rows; y++)
       for (unsigned x=0; x<num_columns; x++)
       {
-         //Board::Piece *piece = grid[
-         //al_draw_circle(
-         //);
+         Peri::Jelly *jelly = board->get_jelly_at(x, y);
+         if (jelly != nullptr) Peri::JellyRenderer jelly_renderer(x * cell_size, y * cell_size, jelly);
       }
 
    place.restore_transform();

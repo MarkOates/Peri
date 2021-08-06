@@ -1,4 +1,8 @@
-functions:
-  - name: run
-    type: std::string
-    body: return "Hello World!";
+properties:
+
+  - name: type
+    type: int
+    init_with: 0
+    getter: true
+    constructor_arg: true
+

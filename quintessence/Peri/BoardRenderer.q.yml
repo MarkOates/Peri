@@ -45,9 +45,8 @@ functions:
       for (unsigned y=0; y<num_rows; y++)
          for (unsigned x=0; x<num_columns; x++)
          {
-            //Board::Piece *piece = grid[
-            //al_draw_circle(
-            //);
+            Peri::Jelly *jelly = board->get_jelly_at(x, y);
+            if (jelly != nullptr) Peri::JellyRenderer jelly_renderer(x * cell_size, y * cell_size, jelly);
          }
 
       place.restore_transform();
@@ -55,6 +54,8 @@ functions:
     body_dependency_symbols:
       - al_draw_filled_rectangle
       - allegro_flare::placement2d
+      - Peri::Jelly*
+      - Peri::JellyRenderer
 
 
 dependencies:
@@ -65,6 +66,10 @@ dependencies:
     headers: [ allegro5/allegro_primitives.h ]
   - symbol: Peri::Board*
     headers: [ Peri/Board.hpp ]
+  - symbol: Peri::Jelly*
+    headers: [ Peri/Jelly.hpp ]
+  - symbol: Peri::JellyRenderer
+    headers: [ Peri/JellyRenderer.hpp ]
   - symbol: allegro_flare::placement2d
     headers: [ allegro_flare/placement2d.h ]
 
