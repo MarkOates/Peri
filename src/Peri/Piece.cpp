@@ -9,8 +9,8 @@ namespace Peri
 
 
 Piece::Piece()
-   : x(0.0)
-   , y(0.0)
+   : grid_x(0.0)
+   , grid_y(0.0)
    , jelly_1({})
    , jelly_2({})
 {
@@ -22,15 +22,15 @@ Piece::~Piece()
 }
 
 
-void Piece::set_x(float x)
+void Piece::set_grid_x(float grid_x)
 {
-   this->x = x;
+   this->grid_x = grid_x;
 }
 
 
-void Piece::set_y(float y)
+void Piece::set_grid_y(float grid_y)
 {
-   this->y = y;
+   this->grid_y = grid_y;
 }
 
 
@@ -46,15 +46,15 @@ void Piece::set_jelly_2(Peri::Jelly jelly_2)
 }
 
 
-float Piece::get_x()
+float Piece::get_grid_x()
 {
-   return x;
+   return grid_x;
 }
 
 
-float Piece::get_y()
+float Piece::get_grid_y()
 {
-   return y;
+   return grid_y;
 }
 
 
@@ -70,10 +70,6 @@ Peri::Jelly Piece::get_jelly_2()
 }
 
 
-std::string Piece::run()
-{
-   return "Hello World!";
-}
 } // namespace Peri
 
 

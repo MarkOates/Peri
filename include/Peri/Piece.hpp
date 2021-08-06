@@ -2,7 +2,6 @@
 
 
 #include <Peri/Jelly.hpp>
-#include <string>
 
 
 namespace Peri
@@ -10,8 +9,8 @@ namespace Peri
    class Piece
    {
    private:
-      float x;
-      float y;
+      float grid_x;
+      float grid_y;
       Peri::Jelly jelly_1;
       Peri::Jelly jelly_2;
 
@@ -19,15 +18,14 @@ namespace Peri
       Piece();
       ~Piece();
 
-      void set_x(float x);
-      void set_y(float y);
+      void set_grid_x(float grid_x);
+      void set_grid_y(float grid_y);
       void set_jelly_1(Peri::Jelly jelly_1);
       void set_jelly_2(Peri::Jelly jelly_2);
-      float get_x();
-      float get_y();
+      float get_grid_x();
+      float get_grid_y();
       Peri::Jelly get_jelly_1();
       Peri::Jelly get_jelly_2();
-      std::string run();
    };
 }
 

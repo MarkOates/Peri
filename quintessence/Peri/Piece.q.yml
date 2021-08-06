@@ -1,11 +1,11 @@
 properties:
 
-  - name: x
+  - name: grid_x
     type: float
     init_with: 0.0
     getter: true
     setter: true
-  - name: y
+  - name: grid_y
     type: float
     init_with: 0.0
     getter: true
@@ -20,12 +20,6 @@ properties:
     init_with: '{}'
     getter: true
     setter: true
-
-functions:
-
-  - name: run
-    type: std::string
-    body: return "Hello World!";
 
 dependencies:
 
