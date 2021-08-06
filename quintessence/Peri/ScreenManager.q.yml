@@ -21,6 +21,9 @@ properties:
     type: std::map<std::string, Peri::AudioRepositoryElement>
     init_with: '{}'
     constructor_arg: true
+  - name: current_active_screen
+    type: AllegroFlare::Screen*
+    init_with: nullptr
 
 
 functions:
@@ -40,6 +43,9 @@ functions:
       switch(ev->keyboard.keycode)
       {
       case ALLEGRO_KEY_ESCAPE:
+         framework->shutdown_program = true;
+         break;
+      case ALLEGRO_KEY_1:
          framework->shutdown_program = true;
          break;
       }
@@ -62,6 +68,8 @@ dependencies:
   - symbol: AllegroFlare::Framework*
     headers: [ AllegroFlare/Framework.hpp ]
   - symbol: AllegroFlare::Screen
+    headers: [ AllegroFlare/Screen.hpp ]
+  - symbol: AllegroFlare::Screen*
     headers: [ AllegroFlare/Screen.hpp ]
   - symbol: AllegroFlare::Screens*
     headers: [ AllegroFlare/Screens.hpp ]

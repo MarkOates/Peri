@@ -44,5 +44,101 @@ table td
 </head>
 <body>
 <h1>TOC</h1>
+<ul>
+  <li><a href="#quintessence/Peri/ProgramRunner.q.yml">quintessence/Peri/ProgramRunner.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Peri/ScreenManager.q.yml">quintessence/Peri/ScreenManager.q.yml</a></li>
+</ul>
 <h1>Components</h1>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/ProgramRunner.q.yml">quintessence/Peri/ProgramRunner.q.yml</h3>
+     <table>
+    </table>
+     <table>
+<tr>
+  <td class="method">run()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Display*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Display.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screens&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screens.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Framework&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Framework.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::ScreenManager*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/ScreenManager.hpp&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/ScreenManager.q.yml">quintessence/Peri/ScreenManager.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">framework</td>
+  <td class="property">AllegroFlare::Framework*</td>
+</tr>
+<tr>
+  <td class="property">screens</td>
+  <td class="property">AllegroFlare::Screens*</td>
+</tr>
+<tr>
+  <td class="property">music_track_elements</td>
+  <td class="property">std::map&lt;std::string, Peri::AudioRepositoryElement&gt;</td>
+</tr>
+<tr>
+  <td class="property">sound_effect_elements</td>
+  <td class="property">std::map&lt;std::string, Peri::AudioRepositoryElement&gt;</td>
+</tr>
+<tr>
+  <td class="property">current_active_screen</td>
+  <td class="property">AllegroFlare::Screen*</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">initialize()</td>
+</tr>
+<tr>
+  <td class="method">key_down_func(1)</td>
+</tr>
+<tr>
+  <td class="method">run()</td>
+</tr>
+<tr>
+  <td class="method">load_initial_screen()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Display*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Display.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Framework*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Framework.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screen&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screen.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screen*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screen.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screens*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screens.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;std::map&lt;std::string, Peri::AudioRepositoryElement&gt;&quot;, &quot;headers&quot;=&gt;[&quot;map&quot;, &quot;string&quot;, &quot;Peri/AudioRepositoryElement.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_EVENT*&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
 </body>

@@ -19,6 +19,7 @@ namespace Peri
       AllegroFlare::Screens* screens;
       std::map<std::string, Peri::AudioRepositoryElement> music_track_elements;
       std::map<std::string, Peri::AudioRepositoryElement> sound_effect_elements;
+      AllegroFlare::Screen* current_active_screen;
 
    public:
       ScreenManager(AllegroFlare::Framework* framework=nullptr, AllegroFlare::Screens* screens=nullptr, std::map<std::string, Peri::AudioRepositoryElement> music_track_elements={}, std::map<std::string, Peri::AudioRepositoryElement> sound_effect_elements={});

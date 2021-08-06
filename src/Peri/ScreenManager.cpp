@@ -14,6 +14,7 @@ ScreenManager::ScreenManager(AllegroFlare::Framework* framework, AllegroFlare::S
    , screens(screens)
    , music_track_elements(music_track_elements)
    , sound_effect_elements(sound_effect_elements)
+   , current_active_screen(nullptr)
 {
 }
 
@@ -33,6 +34,9 @@ void ScreenManager::key_down_func(ALLEGRO_EVENT* ev)
    switch(ev->keyboard.keycode)
    {
    case ALLEGRO_KEY_ESCAPE:
+      framework->shutdown_program = true;
+      break;
+   case ALLEGRO_KEY_1:
       framework->shutdown_program = true;
       break;
    }
