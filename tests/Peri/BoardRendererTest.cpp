@@ -37,11 +37,15 @@ TEST_F(Peri_BoardRendererTestWithEmptyFixture, render__without_a_board__raises_a
    ASSERT_THROW_WITH_MESSAGE(board_renderer.render(), std::runtime_error, expected_error_message);
 }
 
-//TEST_F(DISABLED_Peri_BoardRendererTestWithAllegroRenderingFixture, render__renders_the_board)
-//{
-//   Peri::BoardRenderer board_renderer;
-//   board_renderer.render();
-//   al_flip_display();
-//   sleep(1);
-//}
+
+#include <allegro5/allegro_primitives.h>
+
+TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__renders_the_board)
+{
+   Peri::Board board;
+   Peri::BoardRenderer board_renderer(&board);
+   board_renderer.render();
+   al_flip_display();
+   sleep(1);
+}
 
