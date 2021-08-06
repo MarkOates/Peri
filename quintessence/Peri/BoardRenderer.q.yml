@@ -8,6 +8,16 @@ properties:
   - name: background_color
     type: ALLEGRO_COLOR
     init_with: ALLEGRO_COLOR{0.2f, 0.2f, 0.2f, 0.2f}
+  - name: x
+    type: float
+    init_with: 0
+    getter: true
+    setter: true
+  - name: y
+    type: float
+    init_with: 0
+    getter: true
+    setter: true
   - name: cell_size
     type: float
     init_with: 50.0f
@@ -20,7 +30,9 @@ functions:
     type: void
     guards: [ board ]
     body: |
-      allegro_flare::placement2d place;
+      float board_real_width = board->get_width() * cell_size;
+      float board_real_height = board->get_height() * cell_size;
+      allegro_flare::placement2d place(x, y, board_real_width, board_real_height);
       std::vector<Peri::Jelly*> &grid = board->get_grid_ref();
       int num_rows = board->get_height();
       int num_columns = board->get_width();
@@ -61,6 +73,22 @@ functions:
       - allegro_flare::placement2d
       - Peri::Jelly*
       - Peri::JellyRenderer
+
+
+  - name: set_position
+    type: void
+    parameters:
+      - name: x
+        type: float
+        default_argument: 0
+      - name: y
+        type: float
+        default_argument: 0
+    body: |
+      this->x = x;
+      this->y = y;
+      return;
+
 
 
 dependencies:

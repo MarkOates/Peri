@@ -2,6 +2,7 @@
 
 
 #include <Peri/Jelly.hpp>
+#include <allegro5/allegro.h>
 
 
 namespace Peri
@@ -18,6 +19,7 @@ namespace Peri
       ~JellyRenderer();
 
       void render();
+      ALLEGRO_COLOR calc_jelly_color();
    };
 }
 

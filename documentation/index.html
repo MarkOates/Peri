@@ -123,6 +123,14 @@ table td
   <td class="property">ALLEGRO_COLOR</td>
 </tr>
 <tr>
+  <td class="property">x</td>
+  <td class="property">float</td>
+</tr>
+<tr>
+  <td class="property">y</td>
+  <td class="property">float</td>
+</tr>
+<tr>
   <td class="property">cell_size</td>
   <td class="property">float</td>
 </tr>
@@ -130,6 +138,9 @@ table td
      <table>
 <tr>
   <td class="method">render()</td>
+</tr>
+<tr>
+  <td class="method">set_position(2)</td>
 </tr>
     </table>
      <table>
@@ -243,6 +254,9 @@ table td
 <tr>
   <td class="method">render()</td>
 </tr>
+<tr>
+  <td class="method">calc_jelly_color()</td>
+</tr>
     </table>
      <table>
 <tr>
@@ -253,6 +267,9 @@ table td
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_color_name&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_color.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_COLOR&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement2d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement2d.h&quot;]}</td>
@@ -424,7 +441,10 @@ table td
   <td class="method">get_any_font()</td>
 </tr>
 <tr>
-  <td class="method">build_centered_placement(2)</td>
+  <td class="method">build_centered_placement3d(2)</td>
+</tr>
+<tr>
+  <td class="method">build_centered_placement2d(2)</td>
 </tr>
     </table>
      <table>
@@ -445,6 +465,9 @@ table td
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;:&quot;:testing::Test&quot;, &quot;headers&quot;=&gt;[&quot;gtest/gtest.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement2d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement2d.h&quot;]}</td>
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement3d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement3d.h&quot;]}</td>

@@ -23,7 +23,7 @@ functions:
       allegro_flare::placement2d place(x, y, 0, 0);
 
       place.start_transform();
-      al_draw_filled_circle(0, 0, 20.0, al_color_name("pink"));
+      al_draw_filled_circle(0, 0, 20.0, calc_jelly_color());
       place.restore_transform();
 
       return;
@@ -31,6 +31,23 @@ functions:
       - al_draw_filled_circle
       - al_color_name
       - allegro_flare::placement2d
+
+
+  - name: calc_jelly_color
+    type: ALLEGRO_COLOR
+    guards: [ jelly ]
+    body: |
+      switch(jelly->get_type())
+      {
+      case 0: return al_color_name("gray");
+      case 1: return al_color_name("red");
+      case 2: return al_color_name("yellow");
+      case 3: return al_color_name("blue");
+      default: return al_color_name("white");
+      }
+    body_dependency_symbols:
+      - al_color_name
+
 
 
 dependencies:
@@ -42,6 +59,8 @@ dependencies:
     headers: [ allegro5/allegro_primitives.h ]
   - symbol: al_color_name
     headers: [ allegro5/allegro_color.h ]
+  - symbol: ALLEGRO_COLOR
+    headers: [ allegro5/allegro.h ]
   - symbol: allegro_flare::placement2d
     headers: [ allegro_flare/placement2d.h ]
 

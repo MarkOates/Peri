@@ -5,6 +5,8 @@
 #include <allegro5/allegro_primitives.h>
 #include <stdexcept>
 #include <sstream>
+#include <stdexcept>
+#include <sstream>
 
 
 namespace Testing
@@ -66,16 +68,28 @@ ALLEGRO_FONT* WithAllegroRenderingFixture::get_any_font()
    return font_bin.auto_get("consolas.ttf 32");
 }
 
-allegro_flare::placement3d WithAllegroRenderingFixture::build_centered_placement(float width, float height)
+allegro_flare::placement3d WithAllegroRenderingFixture::build_centered_placement3d(float width, float height)
 {
    if (!(al_get_target_bitmap()))
       {
          std::stringstream error_message;
-         error_message << "WithAllegroRenderingFixture" << "::" << "build_centered_placement" << ": error: " << "guard \"al_get_target_bitmap()\" not met";
+         error_message << "WithAllegroRenderingFixture" << "::" << "build_centered_placement3d" << ": error: " << "guard \"al_get_target_bitmap()\" not met";
          throw std::runtime_error(error_message.str());
       }
    allegro_flare::placement3d place(al_get_display_width(display)/2, al_get_display_height(display)/2, 0.0f);
    place.size = AllegroFlare::vec3d(width, height, 0);
+   return place;
+}
+
+allegro_flare::placement2d WithAllegroRenderingFixture::build_centered_placement2d(float width, float height)
+{
+   if (!(al_get_target_bitmap()))
+      {
+         std::stringstream error_message;
+         error_message << "WithAllegroRenderingFixture" << "::" << "build_centered_placement2d" << ": error: " << "guard \"al_get_target_bitmap()\" not met";
+         throw std::runtime_error(error_message.str());
+      }
+   allegro_flare::placement2d place(al_get_display_width(display)/2, al_get_display_height(display)/2, width, height);
    return place;
 }
 } // namespace Testing

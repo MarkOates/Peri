@@ -16,6 +16,8 @@ namespace Peri
 BoardRenderer::BoardRenderer(Peri::Board* board)
    : board(board)
    , background_color(ALLEGRO_COLOR{0.2f, 0.2f, 0.2f, 0.2f})
+   , x(0)
+   , y(0)
    , cell_size(50.0f)
 {
 }
@@ -23,6 +25,30 @@ BoardRenderer::BoardRenderer(Peri::Board* board)
 
 BoardRenderer::~BoardRenderer()
 {
+}
+
+
+void BoardRenderer::set_x(float x)
+{
+   this->x = x;
+}
+
+
+void BoardRenderer::set_y(float y)
+{
+   this->y = y;
+}
+
+
+float BoardRenderer::get_x()
+{
+   return x;
+}
+
+
+float BoardRenderer::get_y()
+{
+   return y;
 }
 
 
@@ -40,7 +66,9 @@ void BoardRenderer::render()
          error_message << "BoardRenderer" << "::" << "render" << ": error: " << "guard \"board\" not met";
          throw std::runtime_error(error_message.str());
       }
-   allegro_flare::placement2d place;
+   float board_real_width = board->get_width() * cell_size;
+   float board_real_height = board->get_height() * cell_size;
+   allegro_flare::placement2d place(x, y, board_real_width, board_real_height);
    std::vector<Peri::Jelly*> &grid = board->get_grid_ref();
    int num_rows = board->get_height();
    int num_columns = board->get_width();
@@ -75,6 +103,13 @@ void BoardRenderer::render()
       }
 
    place.restore_transform();
+   return;
+}
+
+void BoardRenderer::set_position(float x, float y)
+{
+   this->x = x;
+   this->y = y;
    return;
 }
 } // namespace Peri

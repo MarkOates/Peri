@@ -48,10 +48,28 @@ TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__renders_the_bo
 TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__with_jellies__renders_the_board_as_expected)
 {
    Peri::Board board;
-   Peri::Jelly jelly;
-   board.place_jelly(2, 3, &jelly);
+   Peri::Jelly jelly1(1), jelly2(2);
+   board.place_jelly(2, 3, &jelly1);
+   board.place_jelly(5, 9, &jelly2);
+   allegro_flare::placement2d centered_place = build_centered_placement2d(0, 0);
 
    Peri::BoardRenderer board_renderer(&board);
+   board_renderer.set_position(centered_place.x, centered_place.y);
+   board_renderer.render();
+   al_flip_display();
+   sleep(1);
+}
+
+TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__respects_x_and_y_placement)
+{
+   Peri::Board board;
+   Peri::Jelly jelly1(1), jelly2(2);
+   board.place_jelly(2, 3, &jelly1);
+   board.place_jelly(5, 9, &jelly2);
+   allegro_flare::placement2d centered_place = build_centered_placement2d(0, 0);
+
+   Peri::BoardRenderer board_renderer(&board);
+   board_renderer.set_position(centered_place.x - 300, centered_place.y - 100);
    board_renderer.render();
    al_flip_display();
    sleep(1);
