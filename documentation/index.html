@@ -71,6 +71,9 @@ table td
 <ul>
   <li><a href="#quintessence/Peri/ScreenManager.q.yml">quintessence/Peri/ScreenManager.q.yml</a></li>
 </ul>
+<ul>
+  <li><a href="#quintessence/Testing/WithAllegroRenderingFixture.q.yml">quintessence/Testing/WithAllegroRenderingFixture.q.yml</a></li>
+</ul>
 <h1>Components</h1>
 <ul>
   <div class="component">
@@ -393,6 +396,58 @@ table td
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::GameplayScreen*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/GameplayScreen.hpp&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Testing/WithAllegroRenderingFixture.q.yml">quintessence/Testing/WithAllegroRenderingFixture.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">display</td>
+  <td class="property">ALLEGRO_DISPLAY*</td>
+</tr>
+<tr>
+  <td class="property">font_bin</td>
+  <td class="property">AllegroFlare::FontBin</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">SetUp()</td>
+</tr>
+<tr>
+  <td class="method">TearDown()</td>
+</tr>
+<tr>
+  <td class="method">get_any_font()</td>
+</tr>
+<tr>
+  <td class="method">build_centered_placement(2)</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_init_primitives_addon&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_primitives.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_init_ttf_addon&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_ttf.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_DISPLAY*&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_FONT*&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_font.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::FontBin&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/FontBin.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;:&quot;:testing::Test&quot;, &quot;headers&quot;=&gt;[&quot;gtest/gtest.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement3d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement3d.h&quot;]}</td>
 </tr>
     </table>
   </div>

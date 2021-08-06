@@ -5,6 +5,8 @@
 #include <allegro_flare/placement2d.h>
 #include <Peri/Jelly.hpp>
 #include <Peri/JellyRenderer.hpp>
+#include <stdexcept>
+#include <sstream>
 
 
 namespace Peri
@@ -32,6 +34,12 @@ float BoardRenderer::get_cell_size()
 
 void BoardRenderer::render()
 {
+   if (!(board))
+      {
+         std::stringstream error_message;
+         error_message << "BoardRenderer" << "::" << "render" << ": error: " << "guard \"board\" not met";
+         throw std::runtime_error(error_message.str());
+      }
    allegro_flare::placement2d place;
    std::vector<Peri::Jelly*> &grid = board->get_grid_ref();
 
@@ -39,6 +47,7 @@ void BoardRenderer::render()
 
    int num_rows = board->get_height();
    int num_columns = board->get_width();
+   return;
    ALLEGRO_COLOR cell_outline_color = al_color_name("pink");
    float cell_outline_thickness = 3;
 
