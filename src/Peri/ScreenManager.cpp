@@ -36,9 +36,6 @@ void ScreenManager::key_down_func(ALLEGRO_EVENT* ev)
    case ALLEGRO_KEY_ESCAPE:
       framework->shutdown_program = true;
       break;
-   case ALLEGRO_KEY_1:
-      framework->shutdown_program = true;
-      break;
    }
    return;
 }
@@ -50,6 +47,18 @@ std::string ScreenManager::run()
 
 void ScreenManager::load_initial_screen()
 {
+   if (current_active_screen != nullptr)
+   {
+      // remove screen from screens
+      screens->remove(current_active_screen);
+      delete current_active_screen;
+      current_active_screen = nullptr;
+   }
+
+   current_active_screen = new Peri::GameplayScreen;
+
+   screens->add(current_active_screen);
+
    return;
 }
 } // namespace Peri

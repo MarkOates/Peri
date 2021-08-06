@@ -1,7 +1,7 @@
 
 
 #include <Peri/GameplayScreen.hpp>
-
+#include <Peri/BoardRenderer.hpp>
 
 
 namespace Peri
@@ -24,6 +24,9 @@ GameplayScreen::~GameplayScreen()
 
 void GameplayScreen::primary_timer_func()
 {
+   Peri::BoardRenderer board_renderer(&board);
+   board_renderer.render();
+   std::cout << "AAA" << std::endl;
    return;
 }
 
@@ -32,6 +35,7 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
    switch(ev->keyboard.keycode)
    {
    case ALLEGRO_KEY_RIGHT:
+      std::cout << "RIGHT" << std::endl;
       //framework->shutdown_program = true;
       break;
    case ALLEGRO_KEY_LEFT:

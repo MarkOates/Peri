@@ -1,4 +1,33 @@
+properties:
+
+
+  - name: board
+    type: Peri::Board*
+    init_with: nullptr
+    constructor_arg: true
+  - name: background_color
+    type: ALLEGRO_COLOR
+    init_with: ALLEGRO_COLOR{0.2f, 0.2f, 0.2f, 0.2f}
+
+
 functions:
-  - name: run
-    type: std::string
-    body: return "Hello World!";
+
+  - name: render
+    type: void
+    body: |
+      al_draw_filled_rectangle(0, 0, 100, 300, background_color);
+      return;
+    body_dependency_symbols:
+      - al_draw_filled_rectangle
+
+
+dependencies:
+
+  - symbol: ALLEGRO_COLOR
+    headers: [ allegro5/allegro_color.h ]
+  - symbol: al_draw_filled_rectangle
+    headers: [ allegro5/allegro_primitives.h ]
+  - symbol: Peri::Board*
+    headers: [ Peri/Board.hpp ]
+
+

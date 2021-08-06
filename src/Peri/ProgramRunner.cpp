@@ -49,10 +49,7 @@ std::string ProgramRunner::run()
    Peri::ScreenManager *screen_manager =
       new Peri::ScreenManager(&framework, &screens, music_track_elements, sound_effect_elements);
    screen_manager->initialize();
-
    screens.add(screen_manager);
-
-   //screen_manager->start();
    screen_manager->load_initial_screen();
 
    framework.run_loop();

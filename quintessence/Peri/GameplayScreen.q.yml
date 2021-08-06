@@ -28,7 +28,12 @@ functions:
     virtual: true
     override: true
     body: |
+      Peri::BoardRenderer board_renderer(&board);
+      board_renderer.render();
+      std::cout << "AAA" << std::endl;
       return;
+    body_dependency_symbols:
+      - Peri::BoardRenderer
 
 
   - name: key_down_func
@@ -41,6 +46,7 @@ functions:
       switch(ev->keyboard.keycode)
       {
       case ALLEGRO_KEY_RIGHT:
+         std::cout << "RIGHT" << std::endl;
          //framework->shutdown_program = true;
          break;
       case ALLEGRO_KEY_LEFT:
@@ -74,6 +80,10 @@ dependencies:
     headers: [ allegro5/allegro.h ]
   - symbol: Peri::Board
     headers: [ Peri/Board.hpp ]
+  - symbol: Peri::BoardRenderer
+    headers: [ Peri/BoardRenderer.hpp ]
+  - symbol: Peri::PieceRenderer
+    headers: [ Peri/PieceRenderer.hpp ]
   - symbol: Peri::Piece*
     headers: [ Peri/Piece.hpp ]
 

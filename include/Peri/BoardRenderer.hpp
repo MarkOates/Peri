@@ -1,7 +1,8 @@
 #pragma once
 
 
-#include <string>
+#include <Peri/Board.hpp>
+#include <allegro5/allegro_color.h>
 
 
 namespace Peri
@@ -9,12 +10,14 @@ namespace Peri
    class BoardRenderer
    {
    private:
+      Peri::Board* board;
+      ALLEGRO_COLOR background_color;
 
    public:
-      BoardRenderer();
+      BoardRenderer(Peri::Board* board=nullptr);
       ~BoardRenderer();
 
-      std::string run();
+      void render();
    };
 }
 

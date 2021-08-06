@@ -45,12 +45,169 @@ table td
 <body>
 <h1>TOC</h1>
 <ul>
+  <li><a href="#quintessence/Peri/Board.q.yml">quintessence/Peri/Board.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Peri/BoardRenderer.q.yml">quintessence/Peri/BoardRenderer.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Peri/GameplayScreen.q.yml">quintessence/Peri/GameplayScreen.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Peri/Piece.q.yml">quintessence/Peri/Piece.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Peri/PieceRenderer.q.yml">quintessence/Peri/PieceRenderer.q.yml</a></li>
+</ul>
+<ul>
   <li><a href="#quintessence/Peri/ProgramRunner.q.yml">quintessence/Peri/ProgramRunner.q.yml</a></li>
 </ul>
 <ul>
   <li><a href="#quintessence/Peri/ScreenManager.q.yml">quintessence/Peri/ScreenManager.q.yml</a></li>
 </ul>
 <h1>Components</h1>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/Board.q.yml">quintessence/Peri/Board.q.yml</h3>
+     <table>
+    </table>
+     <table>
+<tr>
+  <td class="method">run()</td>
+</tr>
+    </table>
+     <table>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/BoardRenderer.q.yml">quintessence/Peri/BoardRenderer.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">board</td>
+  <td class="property">Peri::Board*</td>
+</tr>
+<tr>
+  <td class="property">background_color</td>
+  <td class="property">ALLEGRO_COLOR</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">render()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_COLOR&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_color.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_draw_filled_rectangle&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_primitives.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Board*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Board.hpp&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/GameplayScreen.q.yml">quintessence/Peri/GameplayScreen.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">framework</td>
+  <td class="property">AllegroFlare::Framework*</td>
+</tr>
+<tr>
+  <td class="property">board</td>
+  <td class="property">Peri::Board</td>
+</tr>
+<tr>
+  <td class="property">current_piece</td>
+  <td class="property">Peri::Piece*</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">primary_timer_func()</td>
+</tr>
+<tr>
+  <td class="method">key_down_func(1)</td>
+</tr>
+<tr>
+  <td class="method">generate_piece()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screen&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screen.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Framework*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Framework.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_EVENT*&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Board&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Board.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::BoardRenderer&quot;, &quot;headers&quot;=&gt;[&quot;Peri/BoardRenderer.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::PieceRenderer&quot;, &quot;headers&quot;=&gt;[&quot;Peri/PieceRenderer.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Piece*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Piece.hpp&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/Piece.q.yml">quintessence/Peri/Piece.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">x</td>
+  <td class="property">float</td>
+</tr>
+<tr>
+  <td class="property">y</td>
+  <td class="property">float</td>
+</tr>
+<tr>
+  <td class="property">color_1</td>
+  <td class="property">int</td>
+</tr>
+<tr>
+  <td class="property">color_2</td>
+  <td class="property">int</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">run()</td>
+</tr>
+    </table>
+     <table>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Peri/PieceRenderer.q.yml">quintessence/Peri/PieceRenderer.q.yml</h3>
+     <table>
+    </table>
+     <table>
+<tr>
+  <td class="method">run()</td>
+</tr>
+    </table>
+     <table>
+    </table>
+  </div>
+</ul>
 <ul>
   <div class="component">
     <h3 id="quintessence/Peri/ProgramRunner.q.yml">quintessence/Peri/ProgramRunner.q.yml</h3>
