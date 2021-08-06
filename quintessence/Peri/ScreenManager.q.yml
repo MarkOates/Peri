@@ -1,0 +1,72 @@
+parent_classes:
+  - class: AllegroFlare::Screen
+    scope: public
+    init_with: "{}"
+
+
+properties:
+  - name: framework
+    type: AllegroFlare::Framework*
+    init_with: nullptr
+    constructor_arg: true
+  - name: screens
+    type: AllegroFlare::Screens*
+    init_with: nullptr
+    constructor_arg: true
+  - name: music_track_elements
+    type: std::map<std::string, Peri::AudioRepositoryElement>
+    init_with: '{}'
+    constructor_arg: true
+  - name: sound_effect_elements
+    type: std::map<std::string, Peri::AudioRepositoryElement>
+    init_with: '{}'
+    constructor_arg: true
+
+
+functions:
+
+  - name: initialize
+    type: void
+    body: |
+      return;
+
+  - name: key_down_func
+    override: true
+    parameters:
+      - name: ev
+        type: ALLEGRO_EVENT*
+        default_argument: nullptr
+    body: |
+      switch(ev->keyboard.keycode)
+      {
+      case ALLEGRO_KEY_ESCAPE:
+         framework->shutdown_program = true;
+         break;
+      }
+      return;
+
+  - name: run
+    type: std::string
+    body: |
+      return "Hello World!";
+
+  - name: load_initial_screen
+    type: void
+    body: |
+      return;
+
+
+dependencies:
+  - symbol: AllegroFlare::Display*
+    headers: [ AllegroFlare/Display.hpp ]
+  - symbol: AllegroFlare::Framework*
+    headers: [ AllegroFlare/Framework.hpp ]
+  - symbol: AllegroFlare::Screen
+    headers: [ AllegroFlare/Screen.hpp ]
+  - symbol: AllegroFlare::Screens*
+    headers: [ AllegroFlare/Screens.hpp ]
+  - symbol: std::map<std::string, Peri::AudioRepositoryElement>
+    headers: [ map, string, Peri/AudioRepositoryElement.hpp ]
+  - symbol: ALLEGRO_EVENT*
+    headers: [ allegro5/allegro.h ]
+
