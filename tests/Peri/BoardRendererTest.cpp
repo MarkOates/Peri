@@ -43,6 +43,17 @@ TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__renders_the_bo
    Peri::BoardRenderer board_renderer(&board);
    board_renderer.render();
    al_flip_display();
+}
+
+TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__with_jellies__renders_the_board_as_expected)
+{
+   Peri::Board board;
+   Peri::Jelly jelly;
+   board.place_jelly(2, 2, &jelly);
+
+   Peri::BoardRenderer board_renderer(&board);
+   board_renderer.render();
+   al_flip_display();
    sleep(1);
 }
 

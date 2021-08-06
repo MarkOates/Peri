@@ -67,7 +67,11 @@ void BoardRenderer::render()
       for (unsigned x=0; x<num_columns; x++)
       {
          Peri::Jelly *jelly = board->get_jelly_at(x, y);
-         if (jelly != nullptr) Peri::JellyRenderer jelly_renderer(x * cell_size, y * cell_size, jelly);
+         if (jelly != nullptr)
+         {
+            Peri::JellyRenderer jelly_renderer(x * cell_size, y * cell_size, jelly);
+            jelly_renderer.render();
+         }
       }
 
    place.restore_transform();
