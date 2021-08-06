@@ -50,6 +50,9 @@ functions:
          break;
       }
       return;
+    body_dependency_symbols:
+      - Peri::GameplayScreen*
+
 
   - name: run
     type: std::string
@@ -77,4 +80,6 @@ dependencies:
     headers: [ map, string, Peri/AudioRepositoryElement.hpp ]
   - symbol: ALLEGRO_EVENT*
     headers: [ allegro5/allegro.h ]
+  - symbol: Peri::GameplayScreen*
+    headers: [ Peri/GameplayScreen.hpp ]
 

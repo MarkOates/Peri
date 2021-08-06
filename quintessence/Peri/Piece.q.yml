@@ -1,0 +1,27 @@
+properties:
+
+  - name: x
+    type: float
+    init_with: 0.0
+    getter: true
+    setter: true
+  - name: y
+    type: float
+    init_with: 0.0
+    getter: true
+    setter: true
+  - name: color_1
+    type: int
+    init_with: 0
+    getter: true
+    setter: true
+  - name: color_2
+    type: int
+    init_with: 0
+    getter: true
+    setter: true
+
+functions:
+  - name: run
+    type: std::string
+    body: return "Hello World!";
