@@ -26,7 +26,6 @@ void GameplayScreen::primary_timer_func()
 {
    Peri::BoardRenderer board_renderer(&board);
    board_renderer.render();
-   std::cout << "AAA" << std::endl;
    return;
 }
 

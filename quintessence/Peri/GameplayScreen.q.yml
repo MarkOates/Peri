@@ -30,7 +30,6 @@ functions:
     body: |
       Peri::BoardRenderer board_renderer(&board);
       board_renderer.render();
-      std::cout << "AAA" << std::endl;
       return;
     body_dependency_symbols:
       - Peri::BoardRenderer
