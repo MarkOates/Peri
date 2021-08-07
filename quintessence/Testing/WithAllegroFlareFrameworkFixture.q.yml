@@ -12,7 +12,7 @@ properties:
   - name: display
     type: AllegroFlare::Display*
     init_with: nullptr
-    getter_ref: true
+    getter: true
   - name: screens
     type: AllegroFlare::Screens
     init_with: '{}'
@@ -47,6 +47,7 @@ functions:
     override: true
     body: |
       framework.destruct();
+      display = nullptr;
 
       //font_bin.clear();
       //al_shutdown_ttf_addon(); // NOTE: this may be required, otherwise subsequent al_init_ttf_addon will not work

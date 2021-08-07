@@ -20,7 +20,7 @@ namespace Testing
       WithAllegroFlareFrameworkFixture();
       virtual ~WithAllegroFlareFrameworkFixture();
 
-      AllegroFlare::Display* &get_display_ref();
+      AllegroFlare::Display* get_display();
       AllegroFlare::Screens &get_screens_ref();
       AllegroFlare::Framework &get_framework_ref();
       virtual void SetUp() override;

@@ -26,6 +26,17 @@ TEST(Testing_WithAllegroFlareFrameworkFixture, SetUp__initializes_the_framework)
    EXPECT_EQ(true, framework.is_initialized());
 }
 
+TEST(Testing_WithAllegroFlareFrameworkFixture, SetUp__creates_a_display)
+{
+   TestClass test_class;
+   EXPECT_EQ(nullptr, test_class.get_display());
+
+   test_class.SetUp();
+   EXPECT_NE(nullptr, test_class.get_display());
+
+   test_class.TearDown();
+}
+
 TEST(Testing_WithAllegroFlareFrameworkFixture, TearDown__uninitializes_the_framework)
 {
    TestClass test_class;
@@ -36,5 +47,15 @@ TEST(Testing_WithAllegroFlareFrameworkFixture, TearDown__uninitializes_the_frame
 
    test_class.TearDown();
    EXPECT_EQ(false, framework.is_initialized());
+}
+
+TEST(Testing_WithAllegroFlareFrameworkFixture, TearDown__sets_the_display_to_nullptr)
+{
+   TestClass test_class;
+   EXPECT_EQ(nullptr, test_class.get_display());
+
+   test_class.SetUp();
+   test_class.TearDown();
+   EXPECT_EQ(nullptr, test_class.get_display());
 }
 

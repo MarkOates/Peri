@@ -22,7 +22,7 @@ WithAllegroFlareFrameworkFixture::~WithAllegroFlareFrameworkFixture()
 }
 
 
-AllegroFlare::Display* &WithAllegroFlareFrameworkFixture::get_display_ref()
+AllegroFlare::Display* WithAllegroFlareFrameworkFixture::get_display()
 {
    return display;
 }
@@ -53,6 +53,7 @@ void WithAllegroFlareFrameworkFixture::SetUp()
 void WithAllegroFlareFrameworkFixture::TearDown()
 {
    framework.destruct();
+   display = nullptr;
 
    //font_bin.clear();
    //al_shutdown_ttf_addon(); // NOTE: this may be required, otherwise subsequent al_init_ttf_addon will not work
