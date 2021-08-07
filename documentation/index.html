@@ -75,6 +75,9 @@ table td
   <li><a href="#quintessence/Peri/TitleScreen.q.yml">quintessence/Peri/TitleScreen.q.yml</a></li>
 </ul>
 <ul>
+  <li><a href="#quintessence/Testing/WithAllegroFlareFrameworkFixture.q.yml">quintessence/Testing/WithAllegroFlareFrameworkFixture.q.yml</a></li>
+</ul>
+<ul>
   <li><a href="#quintessence/Testing/WithAllegroRenderingFixture.q.yml">quintessence/Testing/WithAllegroRenderingFixture.q.yml</a></li>
 </ul>
 <h1>Components</h1>
@@ -530,6 +533,56 @@ table td
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_color_name&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_color.h&quot;]}</td>
+</tr>
+    </table>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Testing/WithAllegroFlareFrameworkFixture.q.yml">quintessence/Testing/WithAllegroFlareFrameworkFixture.q.yml</h3>
+     <table>
+<tr>
+  <td class="property">display</td>
+  <td class="property">AllegroFlare::Display*</td>
+</tr>
+<tr>
+  <td class="property">screens</td>
+  <td class="property">AllegroFlare::Screens</td>
+</tr>
+<tr>
+  <td class="property">framework</td>
+  <td class="property">AllegroFlare::Framework</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="method">SetUp()</td>
+</tr>
+<tr>
+  <td class="method">TearDown()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_DISPLAY*&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Display*&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Display.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Display&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Display.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Screens&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Screens.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;AllegroFlare::Framework&quot;, &quot;headers&quot;=&gt;[&quot;AllegroFlare/Framework.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;:&quot;:testing::Test&quot;, &quot;headers&quot;=&gt;[&quot;gtest/gtest.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_is_system_installed&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
 </tr>
     </table>
   </div>

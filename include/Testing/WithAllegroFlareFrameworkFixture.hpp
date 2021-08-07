@@ -1,11 +1,9 @@
 #pragma once
 
 
-#include <AllegroFlare/FontBin.hpp>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro_flare/placement2d.h>
-#include <allegro_flare/placement3d.h>
+#include <AllegroFlare/Display.hpp>
+#include <AllegroFlare/Framework.hpp>
+#include <AllegroFlare/Screens.hpp>
 #include <gtest/gtest.h>
 
 
@@ -14,20 +12,19 @@ namespace Testing
    class WithAllegroFlareFrameworkFixture : public ::testing::Test
    {
    private:
-      ALLEGRO_DISPLAY* display;
-      AllegroFlare::FontBin font_bin;
+      AllegroFlare::Display* display;
+      AllegroFlare::Screens screens;
+      AllegroFlare::Framework framework;
 
    public:
       WithAllegroFlareFrameworkFixture();
       virtual ~WithAllegroFlareFrameworkFixture();
 
-      ALLEGRO_DISPLAY* get_display();
-      AllegroFlare::FontBin &get_font_bin_ref();
+      AllegroFlare::Display* &get_display_ref();
+      AllegroFlare::Screens &get_screens_ref();
+      AllegroFlare::Framework &get_framework_ref();
       virtual void SetUp() override;
       virtual void TearDown() override;
-      ALLEGRO_FONT* get_any_font();
-      allegro_flare::placement3d build_centered_placement3d(float width=0.0f, float height=0.0f);
-      allegro_flare::placement2d build_centered_placement2d(float width=0.0f, float height=0.0f);
    };
 }
 
