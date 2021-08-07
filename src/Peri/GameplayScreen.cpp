@@ -48,6 +48,11 @@ void GameplayScreen::primary_timer_func()
    return;
 }
 
+void GameplayScreen::user_event_func(ALLEGRO_EVENT* ev)
+{
+   return;
+}
+
 void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
 {
    switch(ev->keyboard.keycode)

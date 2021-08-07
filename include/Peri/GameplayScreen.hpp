@@ -25,6 +25,7 @@ namespace Peri
       virtual ~GameplayScreen();
 
       virtual void primary_timer_func() override;
+      virtual void user_event_func(ALLEGRO_EVENT* ev=nullptr) override;
       void key_down_func(ALLEGRO_EVENT* ev=nullptr) override;
       void spawn_random_piece();
       float get_board_cell_width();

@@ -50,6 +50,17 @@ functions:
       - al_get_display_height
 
 
+  - name: user_event_func
+    virtual: true
+    override: true
+    parameters:
+      - name: ev
+        type: ALLEGRO_EVENT*
+        default_argument: nullptr
+    body: |
+      return;
+
+
   - name: key_down_func
     override: true
     parameters:
