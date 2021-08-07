@@ -1,0 +1,41 @@
+parent_classes:
+
+  - class: AllegroFlare::Screen
+    scope: public
+    init_with: "{display}"
+
+properties:
+
+  - name: display
+    type: AllegroFlare::Display*
+    init_with: nullptr
+    constructor_arg: true
+
+functions:
+
+  - name: primary_timer_func
+    virtual: true
+    override: true
+    guards: [ display ]
+    body: |
+      al_clear_to_color(al_color_name("violet"));
+      return;
+    body_dependency_symbols:
+      - al_clear_to_color
+      - al_color_name
+
+dependencies:
+
+  - symbol: AllegroFlare::Screen
+    headers: [ AllegroFlare/Screen.hpp ]
+  - symbol: AllegroFlare::Display*
+    headers: [ AllegroFlare/Display.hpp ]
+  - symbol: AllegroFlare::Framework*
+    headers: [ AllegroFlare/Framework.hpp ]
+  - symbol: ALLEGRO_EVENT*
+    headers: [ allegro5/allegro.h ]
+  - symbol: al_clear_to_color
+    headers: [ allegro5/allegro.h ]
+  - symbol: al_color_name
+    headers: [ allegro5/allegro_color.h ]
+
