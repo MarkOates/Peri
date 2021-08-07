@@ -39,9 +39,6 @@ functions:
       return;
     body_dependency_symbols:
       - al_is_system_installed
-      - AllegroFlare::Display
-      - AllegroFlare::Screens
-      - AllegroFlare::Framework
 
 
   - name: TearDown
@@ -63,8 +60,6 @@ dependencies:
   - symbol: ALLEGRO_DISPLAY*
     headers: [ allegro5/allegro.h ]
   - symbol: AllegroFlare::Display*
-    headers: [ AllegroFlare/Display.hpp ]
-  - symbol: AllegroFlare::Display
     headers: [ AllegroFlare/Display.hpp ]
   - symbol: AllegroFlare::Screens
     headers: [ AllegroFlare/Screens.hpp ]

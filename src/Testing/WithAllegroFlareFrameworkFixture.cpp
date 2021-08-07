@@ -2,9 +2,6 @@
 
 #include <Testing/WithAllegroFlareFrameworkFixture.hpp>
 #include <allegro5/allegro.h>
-#include <AllegroFlare/Display.hpp>
-#include <AllegroFlare/Screens.hpp>
-#include <AllegroFlare/Framework.hpp>
 
 
 namespace Testing

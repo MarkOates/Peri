@@ -38,4 +38,3 @@ TEST(Testing_WithAllegroFlareFrameworkFixture, TearDown__uninitializes_the_frame
    EXPECT_EQ(false, framework.is_initialized());
 }
 
-
