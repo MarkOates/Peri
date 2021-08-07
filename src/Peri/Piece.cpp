@@ -8,11 +8,11 @@ namespace Peri
 {
 
 
-Piece::Piece()
-   : grid_x(0.0)
-   , grid_y(0.0)
-   , jelly_1({})
-   , jelly_2({})
+Piece::Piece(float grid_x, float grid_y, Peri::Jelly jelly_1, Peri::Jelly jelly_2)
+   : grid_x(grid_x)
+   , grid_y(grid_y)
+   , jelly_1(jelly_1)
+   , jelly_2(jelly_2)
 {
 }
 
@@ -65,6 +65,18 @@ Peri::Jelly Piece::get_jelly_1()
 
 
 Peri::Jelly Piece::get_jelly_2()
+{
+   return jelly_2;
+}
+
+
+Peri::Jelly &Piece::get_jelly_1_ref()
+{
+   return jelly_1;
+}
+
+
+Peri::Jelly &Piece::get_jelly_2_ref()
 {
    return jelly_2;
 }

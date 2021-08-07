@@ -5,21 +5,27 @@ properties:
     init_with: 0.0
     getter: true
     setter: true
+    constructor_arg: true
   - name: grid_y
     type: float
     init_with: 0.0
     getter: true
     setter: true
+    constructor_arg: true
   - name: jelly_1
     type: Peri::Jelly
     init_with: '{}'
     getter: true
     setter: true
+    getter_ref: true
+    constructor_arg: true
   - name: jelly_2
     type: Peri::Jelly
     init_with: '{}'
     getter: true
     setter: true
+    getter_ref: true
+    constructor_arg: true
 
 dependencies:
 

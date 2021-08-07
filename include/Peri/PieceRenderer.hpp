@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include <string>
+#include <Peri/Piece.hpp>
 
 
 namespace Peri
@@ -9,12 +9,14 @@ namespace Peri
    class PieceRenderer
    {
    private:
+      Peri::Piece* piece;
+      float cell_size;
 
    public:
-      PieceRenderer();
+      PieceRenderer(Peri::Piece* piece=nullptr, float cell_size=100.0f);
       ~PieceRenderer();
 
-      std::string run();
+      void render();
    };
 }
 

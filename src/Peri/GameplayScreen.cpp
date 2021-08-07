@@ -2,6 +2,7 @@
 
 #include <Peri/GameplayScreen.hpp>
 #include <Peri/BoardRenderer.hpp>
+#include <Peri/PieceRenderer.hpp>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro.h>
 #include <stdexcept>
@@ -35,10 +36,20 @@ void GameplayScreen::primary_timer_func()
          error_message << "GameplayScreen" << "::" << "primary_timer_func" << ": error: " << "guard \"display\" not met";
          throw std::runtime_error(error_message.str());
       }
-   Peri::BoardRenderer board_renderer(&board);
+   float cell_size = 50.0f;
+   // render the board
+   Peri::BoardRenderer board_renderer(&board, current_piece);
    board_renderer.set_position(1920/2, 1080/2);
-   board_renderer.set_cell_size(50.0f);
+   board_renderer.set_cell_size(cell_size);
    board_renderer.render();
+
+   // render the piece
+   if (current_piece)
+   {
+      Peri::PieceRenderer piece_renderer(current_piece, cell_size);
+      piece_renderer.render();
+   }
+
    return;
 }
 
@@ -47,17 +58,14 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
    switch(ev->keyboard.keycode)
    {
    case ALLEGRO_KEY_RIGHT:
-      std::cout << "RIGHT" << std::endl;
-      //framework->shutdown_program = true;
+      move_piece_right();
       break;
    case ALLEGRO_KEY_LEFT:
-      //framework->shutdown_program = true;
       break;
    case ALLEGRO_KEY_SPACE:
-      //framework->shutdown_program = true;
       break;
    case ALLEGRO_KEY_ENTER:
-      //framework->shutdown_program = true;
+      generate_piece();
       break;
    }
    return;
@@ -65,8 +73,36 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
 
 void GameplayScreen::generate_piece()
 {
+   std::cout << "PIECE" << std::endl;
    if (current_piece) delete current_piece;
-   current_piece = new Peri::Piece;
+
+   Peri::Piece *new_current_piece = new Peri::Piece;
+   new_current_piece->set_grid_x(3);
+   new_current_piece->set_grid_y(0);
+   current_piece = new_current_piece;
+}
+
+float GameplayScreen::get_board_cell_width()
+{
+   return 100.0f;
+}
+
+void GameplayScreen::move_piece_right()
+{
+   if (!current_piece) return;
+   float current_piece_grid_x = current_piece->get_grid_x();
+   current_piece->set_grid_x(current_piece_grid_x + get_board_cell_width());
+   //current_piece->set_grid_x += get_board_cell_width();
+}
+
+void GameplayScreen::move_piece_left()
+{
+   if (!current_piece) return;
+}
+
+void GameplayScreen::move_piece_down()
+{
+   if (!current_piece) return;
 }
 } // namespace Peri
 

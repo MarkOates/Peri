@@ -57,7 +57,7 @@ TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__with_jellies__
    board_renderer.set_position(centered_place.x, centered_place.y);
    board_renderer.render();
    al_flip_display();
-   sleep(1);
+   //sleep(1);
 }
 
 TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__respects_x_and_y_placement)
@@ -72,6 +72,21 @@ TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__respects_x_and
    board_renderer.set_position(centered_place.x - 300, centered_place.y - 100);
    board_renderer.render();
    al_flip_display();
-   sleep(1);
+   //sleep(1);
+}
+
+TEST_F(Peri_BoardRendererTestWithAllegroRenderingFixture, render__with_a_player_piece__renders_the_player_piece)
+{
+   Peri::Board board;
+   Peri::Piece player_piece(4, 5, Peri::Jelly(2), Peri::Jelly(3));
+   allegro_flare::placement2d centered_place = build_centered_placement2d(0, 0);
+
+   Peri::BoardRenderer board_renderer(&board, &player_piece);
+   board_renderer.set_position(centered_place.x, centered_place.y);
+
+   board_renderer.render();
+
+   al_flip_display();
+   sleep(2);
 }
 

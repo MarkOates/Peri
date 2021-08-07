@@ -15,7 +15,7 @@ namespace Peri
       Peri::Jelly jelly_2;
 
    public:
-      Piece();
+      Piece(float grid_x=0.0, float grid_y=0.0, Peri::Jelly jelly_1={}, Peri::Jelly jelly_2={});
       ~Piece();
 
       void set_grid_x(float grid_x);
@@ -26,6 +26,8 @@ namespace Peri
       float get_grid_y();
       Peri::Jelly get_jelly_1();
       Peri::Jelly get_jelly_2();
+      Peri::Jelly &get_jelly_1_ref();
+      Peri::Jelly &get_jelly_2_ref();
    };
 }
 

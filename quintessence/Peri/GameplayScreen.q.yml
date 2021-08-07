@@ -33,13 +33,24 @@ functions:
     override: true
     guards: [ display ]
     body: |
-      Peri::BoardRenderer board_renderer(&board);
+      float cell_size = 50.0f;
+      // render the board
+      Peri::BoardRenderer board_renderer(&board, current_piece);
       board_renderer.set_position(1920/2, 1080/2);
-      board_renderer.set_cell_size(50.0f);
+      board_renderer.set_cell_size(cell_size);
       board_renderer.render();
+
+      // render the piece
+      if (current_piece)
+      {
+         Peri::PieceRenderer piece_renderer(current_piece, cell_size);
+         piece_renderer.render();
+      }
+
       return;
     body_dependency_symbols:
       - Peri::BoardRenderer
+      - Peri::PieceRenderer
       - al_get_display_width
       - al_get_display_height
 
@@ -54,17 +65,14 @@ functions:
       switch(ev->keyboard.keycode)
       {
       case ALLEGRO_KEY_RIGHT:
-         std::cout << "RIGHT" << std::endl;
-         //framework->shutdown_program = true;
+         move_piece_right();
          break;
       case ALLEGRO_KEY_LEFT:
-         //framework->shutdown_program = true;
          break;
       case ALLEGRO_KEY_SPACE:
-         //framework->shutdown_program = true;
          break;
       case ALLEGRO_KEY_ENTER:
-         //framework->shutdown_program = true;
+         generate_piece();
          break;
       }
       return;
@@ -73,8 +81,37 @@ functions:
 
   - name: generate_piece
     body: |
+      std::cout << "PIECE" << std::endl;
       if (current_piece) delete current_piece;
-      current_piece = new Peri::Piece;
+
+      Peri::Piece *new_current_piece = new Peri::Piece;
+      new_current_piece->set_grid_x(3);
+      new_current_piece->set_grid_y(0);
+      current_piece = new_current_piece;
+
+
+  - name: get_board_cell_width
+    type: float
+    body: |
+      return 100.0f;
+
+
+  - name: move_piece_right
+    body: |
+      if (!current_piece) return;
+      float current_piece_grid_x = current_piece->get_grid_x();
+      current_piece->set_grid_x(current_piece_grid_x + get_board_cell_width());
+      //current_piece->set_grid_x += get_board_cell_width();
+
+
+  - name: move_piece_left
+    body: |
+      if (!current_piece) return;
+
+
+  - name: move_piece_down
+    body: |
+      if (!current_piece) return;
 
 
 dependencies:

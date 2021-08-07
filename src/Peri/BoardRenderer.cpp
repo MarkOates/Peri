@@ -1,10 +1,12 @@
 
 
 #include <Peri/BoardRenderer.hpp>
+#include <iostream>
 #include <allegro5/allegro_primitives.h>
 #include <allegro_flare/placement2d.h>
 #include <Peri/Jelly.hpp>
 #include <Peri/JellyRenderer.hpp>
+#include <Peri/PieceRenderer.hpp>
 #include <stdexcept>
 #include <sstream>
 
@@ -13,8 +15,9 @@ namespace Peri
 {
 
 
-BoardRenderer::BoardRenderer(Peri::Board* board)
+BoardRenderer::BoardRenderer(Peri::Board* board, Peri::Piece* player_piece)
    : board(board)
+   , player_piece(player_piece)
    , background_color(ALLEGRO_COLOR{0.2f, 0.2f, 0.2f, 0.2f})
    , x(0)
    , y(0)
@@ -111,6 +114,13 @@ void BoardRenderer::render()
             jelly_renderer.render();
          }
       }
+
+   if (player_piece)
+   {
+      std::cout << "HERE" << std::endl;
+      Peri::PieceRenderer piece_renderer(player_piece);
+      piece_renderer.render();
+   }
 
    place.restore_transform();
    return;

@@ -119,6 +119,10 @@ table td
   <td class="property">Peri::Board*</td>
 </tr>
 <tr>
+  <td class="property">player_piece</td>
+  <td class="property">Peri::Piece*</td>
+</tr>
+<tr>
   <td class="property">background_color</td>
   <td class="property">ALLEGRO_COLOR</td>
 </tr>
@@ -157,7 +161,13 @@ table td
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Jelly*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Jelly.hpp&quot;]}</td>
 </tr>
 <tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Piece*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Piece.hpp&quot;]}</td>
+</tr>
+<tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::JellyRenderer&quot;, &quot;headers&quot;=&gt;[&quot;Peri/JellyRenderer.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::PieceRenderer&quot;, &quot;headers&quot;=&gt;[&quot;Peri/PieceRenderer.hpp&quot;]}</td>
 </tr>
 <tr>
   <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement2d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement2d.h&quot;]}</td>
@@ -195,6 +205,18 @@ table td
 </tr>
 <tr>
   <td class="method">generate_piece()</td>
+</tr>
+<tr>
+  <td class="method">get_board_cell_width()</td>
+</tr>
+<tr>
+  <td class="method">move_piece_right()</td>
+</tr>
+<tr>
+  <td class="method">move_piece_left()</td>
+</tr>
+<tr>
+  <td class="method">move_piece_down()</td>
 </tr>
     </table>
      <table>
@@ -328,13 +350,39 @@ table td
   <div class="component">
     <h3 id="quintessence/Peri/PieceRenderer.q.yml">quintessence/Peri/PieceRenderer.q.yml</h3>
      <table>
-    </table>
-     <table>
 <tr>
-  <td class="method">run()</td>
+  <td class="property">piece</td>
+  <td class="property">Peri::Piece*</td>
+</tr>
+<tr>
+  <td class="property">cell_size</td>
+  <td class="property">float</td>
 </tr>
     </table>
      <table>
+<tr>
+  <td class="method">render()</td>
+</tr>
+    </table>
+     <table>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::Piece*&quot;, &quot;headers&quot;=&gt;[&quot;Peri/Piece.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;Peri::JellyRenderer&quot;, &quot;headers&quot;=&gt;[&quot;Peri/JellyRenderer.hpp&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_draw_filled_circle&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_primitives.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;al_color_name&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro_color.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;ALLEGRO_COLOR&quot;, &quot;headers&quot;=&gt;[&quot;allegro5/allegro.h&quot;]}</td>
+</tr>
+<tr>
+  <td class="dependency">{&quot;symbol&quot;=&gt;&quot;allegro_flare::placement2d&quot;, &quot;headers&quot;=&gt;[&quot;allegro_flare/placement2d.h&quot;]}</td>
+</tr>
     </table>
   </div>
 </ul>

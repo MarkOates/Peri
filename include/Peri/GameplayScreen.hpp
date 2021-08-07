@@ -26,6 +26,10 @@ namespace Peri
       virtual void primary_timer_func() override;
       void key_down_func(ALLEGRO_EVENT* ev=nullptr) override;
       void generate_piece();
+      float get_board_cell_width();
+      void move_piece_right();
+      void move_piece_left();
+      void move_piece_down();
    };
 }
 

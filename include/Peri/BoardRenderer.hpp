@@ -2,6 +2,7 @@
 
 
 #include <Peri/Board.hpp>
+#include <Peri/Piece.hpp>
 #include <allegro5/allegro_color.h>
 
 
@@ -11,13 +12,14 @@ namespace Peri
    {
    private:
       Peri::Board* board;
+      Peri::Piece* player_piece;
       ALLEGRO_COLOR background_color;
       float x;
       float y;
       float cell_size;
 
    public:
-      BoardRenderer(Peri::Board* board=nullptr);
+      BoardRenderer(Peri::Board* board=nullptr, Peri::Piece* player_piece=nullptr);
       ~BoardRenderer();
 
       void set_x(float x);
