@@ -30,6 +30,7 @@ namespace Peri
       void move_piece_right();
       void move_piece_left();
       void move_piece_down();
+      void place_piece();
    };
 }
 
