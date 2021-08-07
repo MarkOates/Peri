@@ -69,7 +69,7 @@ functions:
          move_piece_down();
          break;
       case ALLEGRO_KEY_SPACE:
-         spawn_piece();
+         spawn_random_piece();
          break;
       case ALLEGRO_KEY_ENTER:
          place_piece();
@@ -79,11 +79,11 @@ functions:
     body_dependency_symbols: []
 
 
-  - name: spawn_piece
+  - name: spawn_random_piece
     body: |
       if (current_piece) delete current_piece;
 
-      Peri::Piece *new_current_piece = new Peri::Piece(0, 0, Peri::Jelly(2), Peri::Jelly(3));
+      Peri::Piece *new_current_piece = new Peri::Piece(0, 0, __generate_random_jelly(), __generate_random_jelly());
       current_piece = new_current_piece;
 
 
@@ -127,6 +127,12 @@ functions:
       current_piece = nullptr;
 
 
+  - name: __generate_random_jelly
+    type: Peri::Jelly
+    body: |
+      int random_jelly_type = rand() % 3;
+      return Peri::Jelly(random_jelly_type);
+
 
 dependencies:
 
@@ -141,6 +147,8 @@ dependencies:
     headers: [ allegro5/allegro.h ]
   - symbol: Peri::Board
     headers: [ Peri/Board.hpp ]
+  - symbol: Peri::Jelly
+    headers: [ Peri/Jelly.hpp ]
   - symbol: Peri::BoardRenderer
     headers: [ Peri/BoardRenderer.hpp ]
   - symbol: Peri::PieceRenderer

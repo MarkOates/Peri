@@ -62,7 +62,7 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
       move_piece_down();
       break;
    case ALLEGRO_KEY_SPACE:
-      spawn_piece();
+      spawn_random_piece();
       break;
    case ALLEGRO_KEY_ENTER:
       place_piece();
@@ -71,11 +71,11 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
    return;
 }
 
-void GameplayScreen::spawn_piece()
+void GameplayScreen::spawn_random_piece()
 {
    if (current_piece) delete current_piece;
 
-   Peri::Piece *new_current_piece = new Peri::Piece(0, 0, Peri::Jelly(2), Peri::Jelly(3));
+   Peri::Piece *new_current_piece = new Peri::Piece(0, 0, __generate_random_jelly(), __generate_random_jelly());
    current_piece = new_current_piece;
 }
 
@@ -116,6 +116,12 @@ void GameplayScreen::place_piece()
 
    delete current_piece;
    current_piece = nullptr;
+}
+
+Peri::Jelly GameplayScreen::__generate_random_jelly()
+{
+   int random_jelly_type = rand() % 3;
+   return Peri::Jelly(random_jelly_type);
 }
 } // namespace Peri
 
