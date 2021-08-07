@@ -62,7 +62,7 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
       move_piece_down();
       break;
    case ALLEGRO_KEY_SPACE:
-      generate_piece();
+      spawn_piece();
       break;
    case ALLEGRO_KEY_ENTER:
       place_piece();
@@ -71,7 +71,7 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
    return;
 }
 
-void GameplayScreen::generate_piece()
+void GameplayScreen::spawn_piece()
 {
    if (current_piece) delete current_piece;
 
