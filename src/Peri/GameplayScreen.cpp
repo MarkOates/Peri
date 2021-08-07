@@ -37,18 +37,12 @@ void GameplayScreen::primary_timer_func()
          throw std::runtime_error(error_message.str());
       }
    float cell_size = 50.0f;
-   // render the board
+
+   // render the board (with piece if present)
    Peri::BoardRenderer board_renderer(&board, current_piece);
    board_renderer.set_position(1920/2, 1080/2);
    board_renderer.set_cell_size(cell_size);
    board_renderer.render();
-
-   // render the piece
-   if (current_piece)
-   {
-      Peri::PieceRenderer piece_renderer(current_piece, cell_size);
-      piece_renderer.render();
-   }
 
    return;
 }
@@ -73,12 +67,9 @@ void GameplayScreen::key_down_func(ALLEGRO_EVENT* ev)
 
 void GameplayScreen::generate_piece()
 {
-   std::cout << "PIECE" << std::endl;
    if (current_piece) delete current_piece;
 
-   Peri::Piece *new_current_piece = new Peri::Piece;
-   new_current_piece->set_grid_x(3);
-   new_current_piece->set_grid_y(0);
+   Peri::Piece *new_current_piece = new Peri::Piece(0, 0, Peri::Jelly(2), Peri::Jelly(3));
    current_piece = new_current_piece;
 }
 

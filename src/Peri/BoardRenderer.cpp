@@ -117,8 +117,7 @@ void BoardRenderer::render()
 
    if (player_piece)
    {
-      std::cout << "HERE" << std::endl;
-      Peri::PieceRenderer piece_renderer(player_piece);
+      Peri::PieceRenderer piece_renderer(player_piece, cell_size);
       piece_renderer.render();
    }
 
