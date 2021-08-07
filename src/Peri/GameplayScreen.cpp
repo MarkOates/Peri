@@ -13,10 +13,9 @@ namespace Peri
 {
 
 
-GameplayScreen::GameplayScreen(AllegroFlare::Display* display, AllegroFlare::Framework* framework)
+GameplayScreen::GameplayScreen(AllegroFlare::Display* display)
    : AllegroFlare::Screen({display})
    , display(display)
-   , framework(framework)
    , board({})
    , current_piece(nullptr)
 {

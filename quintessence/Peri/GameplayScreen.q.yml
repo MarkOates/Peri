@@ -13,10 +13,6 @@ properties:
     type: AllegroFlare::Display*
     init_with: nullptr
     constructor_arg: true
-  - name: framework
-    type: AllegroFlare::Framework*
-    init_with: nullptr
-    constructor_arg: true
   - name: board
     type: Peri::Board
     init_with: '{}'

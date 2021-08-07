@@ -2,7 +2,6 @@
 
 
 #include <AllegroFlare/Display.hpp>
-#include <AllegroFlare/Framework.hpp>
 #include <AllegroFlare/Screen.hpp>
 #include <Peri/Board.hpp>
 #include <Peri/Jelly.hpp>
@@ -16,12 +15,11 @@ namespace Peri
    {
    private:
       AllegroFlare::Display* display;
-      AllegroFlare::Framework* framework;
       Peri::Board board;
       Peri::Piece* current_piece;
 
    public:
-      GameplayScreen(AllegroFlare::Display* display=nullptr, AllegroFlare::Framework* framework=nullptr);
+      GameplayScreen(AllegroFlare::Display* display=nullptr);
       virtual ~GameplayScreen();
 
       virtual void primary_timer_func() override;
