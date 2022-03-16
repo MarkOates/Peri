@@ -1,0 +1,129 @@
+{
+  "std/vector<Peri/Jelly>": [
+    "Peri/Board"
+  ],
+  "Peri/Jelly": [
+    "Peri/Board",
+    "Peri/BoardRenderer",
+    "Peri/GameplayScreen",
+    "Peri/JellyRenderer",
+    "Peri/Piece"
+  ],
+  "ALLEGRO_COLOR": [
+    "Peri/BoardRenderer",
+    "Peri/JellyRenderer",
+    "Peri/PieceRenderer"
+  ],
+  "al_draw_filled_rectangle": [
+    "Peri/BoardRenderer"
+  ],
+  "Peri/Board": [
+    "Peri/BoardRenderer",
+    "Peri/GameplayScreen"
+  ],
+  "Peri/Piece": [
+    "Peri/BoardRenderer",
+    "Peri/GameplayScreen",
+    "Peri/PieceRenderer"
+  ],
+  "Peri/JellyRenderer": [
+    "Peri/BoardRenderer",
+    "Peri/PieceRenderer"
+  ],
+  "Peri/PieceRenderer": [
+    "Peri/BoardRenderer",
+    "Peri/GameplayScreen"
+  ],
+  "allegro_flare/placement2d": [
+    "Peri/BoardRenderer",
+    "Peri/JellyRenderer",
+    "Peri/PieceRenderer",
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "AllegroFlare/Screen": [
+    "Peri/GameplayScreen",
+    "Peri/ScreenManager",
+    "Peri/ScreenManager",
+    "Peri/TitleScreen"
+  ],
+  "AllegroFlare/Display": [
+    "Peri/GameplayScreen",
+    "Peri/ProgramRunner",
+    "Peri/ScreenManager",
+    "Peri/TitleScreen",
+    "Testing/WithAllegroFlareFrameworkFixture"
+  ],
+  "AllegroFlare/Framework": [
+    "Peri/GameplayScreen",
+    "Peri/ProgramRunner",
+    "Peri/ScreenManager",
+    "Peri/TitleScreen",
+    "Testing/WithAllegroFlareFrameworkFixture"
+  ],
+  "ALLEGRO_EVENT": [
+    "Peri/GameplayScreen",
+    "Peri/ScreenManager",
+    "Peri/TitleScreen"
+  ],
+  "Peri/BoardRenderer": [
+    "Peri/GameplayScreen"
+  ],
+  "al_get_display_width": [
+    "Peri/GameplayScreen"
+  ],
+  "al_get_display_height": [
+    "Peri/GameplayScreen"
+  ],
+  "al_draw_filled_circle": [
+    "Peri/JellyRenderer",
+    "Peri/PieceRenderer"
+  ],
+  "al_color_name": [
+    "Peri/JellyRenderer",
+    "Peri/PieceRenderer",
+    "Peri/TitleScreen"
+  ],
+  "AllegroFlare/Screens": [
+    "Peri/ProgramRunner",
+    "Peri/ScreenManager",
+    "Testing/WithAllegroFlareFrameworkFixture"
+  ],
+  "Peri/ScreenManager": [
+    "Peri/ProgramRunner"
+  ],
+  "std/map<std/string, Peri/AudioRepositoryElement>": [
+    "Peri/ScreenManager"
+  ],
+  "Peri/GameplayScreen": [
+    "Peri/ScreenManager"
+  ],
+  "al_clear_to_color": [
+    "Peri/TitleScreen"
+  ],
+  "ALLEGRO_DISPLAY": [
+    "Testing/WithAllegroFlareFrameworkFixture",
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  ":testing/Test": [
+    "Testing/WithAllegroFlareFrameworkFixture",
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "al_is_system_installed": [
+    "Testing/WithAllegroFlareFrameworkFixture"
+  ],
+  "al_init_primitives_addon": [
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "al_init_ttf_addon": [
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "ALLEGRO_FONT": [
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "AllegroFlare/FontBin": [
+    "Testing/WithAllegroRenderingFixture"
+  ],
+  "allegro_flare/placement3d": [
+    "Testing/WithAllegroRenderingFixture"
+  ]
+}
