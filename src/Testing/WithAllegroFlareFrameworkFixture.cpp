@@ -12,7 +12,7 @@ WithAllegroFlareFrameworkFixture::WithAllegroFlareFrameworkFixture()
    : ::testing::Test()
    , display(nullptr)
    , screens({})
-   , framework({screens})
+   , framework({&screens})
 {
 }
 

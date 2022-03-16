@@ -25,7 +25,7 @@ std::string ProgramRunner::run()
 {
    AllegroFlare::Display *display;
    AllegroFlare::Screens screens;
-   AllegroFlare::Framework framework(screens);
+   AllegroFlare::Framework framework(&screens);
 
    framework.initialize();
    display = framework.create_display(AllegroFlare::Display::RESOLUTION_HD_1080);

@@ -19,7 +19,7 @@ properties:
     getter_ref: true
   - name: framework
     type: AllegroFlare::Framework
-    init_with: '{screens}'
+    init_with: '{&screens}'
     getter_ref: true
 
 
